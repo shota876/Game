@@ -1,0 +1,129 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(34, 34, 34);
+}
+:root{
+    --deskLeft: 50%;
+    --deskTop: 470px;
+    --ballLeft: 100px;
+    --ballTop: 300px;
+}
+.game{
+    width: 700px;
+    height: 500px;
+    background-color: black;
+    box-shadow: 0px 0px 17px 0px rgba(0, 0, 0, 0.75);
+    overflow: hidden;
+    position: relative;
+}
+.desk{
+    position: absolute;
+    width: 100px;
+    height: 20px;
+    background-color: aqua;
+    left: var(--deskLeft);
+    top: var(--deskTop);
+    transform: translateX(-50%);
+    pointer-events: none;
+}
+.walls{
+    border: 1px solid red;
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    pointer-events: none;
+}
+.wall{
+    width: 50px;
+    height: 10px;
+    background-color: blueviolet;
+    position: relative;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+.wall:nth-child(8n){
+    margin-right: 0px;
+}
+.ball{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    pointer-events: none;
+    left: var(--ballLeft);
+    top: var(--ballTop);
+    background-color: red;
+}
+
+.top-wall{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    border: 1px solid red;
+}
+.bottom-wall{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    border: 1px solid red;
+}
+.left-wall{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    border: 1px solid red;
+}
+.right-wall{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    border: 1px solid red;
+}
+.disable{
+    opacity: 0;
+}
+.score{
+    position: absolute;
+    color: white;
+    left: 20px;
+    top: 21px;
+}
+.over{
+    color: white;
+    font-size: 55px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 200px;
+    position: absolute;
+    display: none;
+}
+
+@media(max-width: 527px){
+    .over{
+        font-size: 50px;
+    }
+}
+
+@media(max-width: 375px){
+    .over{
+        top: 243px;
+        font-size: 30px;
+    }
+}
